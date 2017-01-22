@@ -29,7 +29,7 @@ $(function () {
         controlArrows: true,
         verticalCentered: true,
         //为每一个section设置background-color属性
-        sectionsColor: ['#fff', '#cba', '#bac', '#f90'],
+        sectionsColor: ['#14191e', '#08162A', '#464C5C', '#1F1710'],
         
         // paddingTop: '3em',
         // paddingBottom: '10px',

@@ -5561,7 +5561,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     /*background-color: #f8f8f8;*/
     /*border-color: #e7e7e7;*/
     margin-bottom: -50px;
-    background-color: rgba(55, 55, 55, .3);
+    background-color: rgba(225, 225, 255, .03);
 }
 
 .navbar-default .navbar-brand {
