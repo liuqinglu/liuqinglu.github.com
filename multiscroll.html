@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>multiscroll</title>
+    <link rel="stylesheet" href="css/jquery.multiscroll.min.css">
+    <link rel="stylesheet" href="css/demo.css">
+</head>
+<body>
+<ul id="menu">
+    <li data-menuanchor="A" class="active"><a href="#A">首页</a></li>
+    <li data-menuanchor="B"><a href="#B">博客</a></li>
+    <li data-menuanchor="C"><a href="#C">作品</a></li>
+    <li data-menuanchor="D"><a href="#D">关于我</a></li>
+    <li data-menuanchor="E"><a href="#E">联系我</a></li>
+</ul>
+<div id="myContainer">
+    <div class="ms-left">
+        <div class="ms-section ms-section-left left1">Some section</div>
+        <div class="ms-section ms-section-left left2">Some section</div>
+        <div class="ms-section ms-section-left left3">Some section</div>
+        <div class="ms-section ms-section-left left4">Some section</div>
+        <div class="ms-section ms-section-left left5">Some section</div>
+    </div>
+    <div class="ms-right">
+        <div class="ms-section ms-section-right right1">Some section</div>
+        <div class="ms-section ms-section-right right2">Some section</div>
+        <div class="ms-section ms-section-right right3">Some section</div>
+        <div class="ms-section ms-section-right right4">Some section</div>
+        <div class="ms-section ms-section-right right5">Some section</div>
+    </div>
+</div>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/jquery.easings.min.js"></script>
+<script src="js/jquery.multiscroll.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#myContainer').multiscroll({
+            sectionsColor: ['#5df', '#000', '#fd0', '#fc0', '#3cf'],
+            anchors: ['A', 'B', 'C', 'D', 'E'],
+            menu: '#menu',
+            navigation: true,
+            navigationTooltips: ['A', 'B', 'C', 'D', 'E'],
+            verticalCentered: true,
+            scrollingSpeed: 700,
+            easing: 'easeInQuart',
+            navigationPosition: 'right',
+            navigationColor: '#f0f',
+            loopBottom: true,
+            loopTop: false,
+            css3: true,
+            paddingTop: 0,
+            paddingBottom: 0,
+            normalScrollElements: null,
+            keyboardScrolling: true,
+            touchSensitivity: 5,
+
+            //responsive
+            responsiveWidth: 0,
+            responsiveHeight: 0,
+            responsiveExpand: false,
+
+            // Custom selectors
+            sectionSelector: '.ms-section',
+            leftSelector: '.ms-left',
+            rightSelector: '.ms-right'
+        });
+    });
+</script>
+</body>
+</html>
