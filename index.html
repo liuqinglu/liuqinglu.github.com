@@ -2,103 +2,368 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>676</title>
-    <link rel="stylesheet" href="css/jquery.fullpage.min.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>点滴生活</title>
     <style>
-        .section {
-            text-align: center;
-        }
-
-        .video1 {
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .layer {
-            position: absolute;
-            z-index: 4;
-            width: 100%;
-            left: 0;
-            top: 15%;
-            -webkit-transform: translate3d(0, 0, 0);
-            -ms-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
-        }
-
-        .layer h1 {
-            font-size: 3em;
-            color: rgba(55, 255, 255, .7);
+        body {
             margin: 0;
-            padding: 0;
+            font-family: 'Oswald', sans-serif;
         }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            background-color: #F4F4F4;
+            background-image: linear-gradient(90deg, white 0%, #FAF3DE 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .container .wave {
+            width: 20px;
+            position: relative;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            animation: Spin 19s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+        }
+
+        .container .wave .dot {
+            width: 20px;
+            height: 1px;
+            background-color: #464141;
+            display: inline-block;
+            vertical-align: middle;
+            margin: 16px auto;
+            position: relative;
+            transform: scale(0.6);
+        }
+
+        .container .wave .dot:before, .container .wave .dot:after {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            position: absolute;
+            top: -10px;
+            left: -1px;
+        }
+
+        .container .wave .dot:nth-child(1):before {
+            animation: Before 1.9s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+            animation-fill-mode: forwards;
+            animation-delay: -1.71s;
+            background-color: #42dbc0;
+            box-shadow: inset 2px 2px 5px #57dfc7;
+        }
+
+        .container .wave .dot:nth-child(1):after {
+            animation: After 1.9s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+            animation-fill-mode: forwards;
+            animation-delay: -1.71s;
+            background-color: #6f58ee;
+            box-shadow: inset 2px 2px 5px #9786f3;
+        }
+
+        .container .wave .dot:nth-child(2):before {
+            animation: Before 1.9s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+            animation-fill-mode: forwards;
+            animation-delay: -3.42s;
+            background-color: #42dbc0;
+            box-shadow: inset 2px 2px 5px #57dfc7;
+        }
+
+        .container .wave .dot:nth-child(2):after {
+            animation: After 1.9s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+            animation-fill-mode: forwards;
+            animation-delay: -3.42s;
+            background-color: #6f58ee;
+            box-shadow: inset 2px 2px 5px #9786f3;
+        }
+
+        .container .wave .dot:nth-child(3):before {
+            animation: Before 1.9s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+            animation-fill-mode: forwards;
+            animation-delay: -5.13s;
+            background-color: #42dbc0;
+            box-shadow: inset 2px 2px 5px #57dfc7;
+        }
+
+        .container .wave .dot:nth-child(3):after {
+            animation: After 1.9s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+            animation-fill-mode: forwards;
+            animation-delay: -5.13s;
+            background-color: #6f58ee;
+            box-shadow: inset 2px 2px 5px #9786f3;
+        }
+
+        .container .wave .dot:nth-child(4):before {
+            animation: Before 1.9s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+            animation-fill-mode: forwards;
+            animation-delay: -6.84s;
+            background-color: #42dbc0;
+            box-shadow: inset 2px 2px 5px #57dfc7;
+        }
+
+        .container .wave .dot:nth-child(4):after {
+            animation: After 1.9s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+            animation-fill-mode: forwards;
+            animation-delay: -6.84s;
+            background-color: #6f58ee;
+            box-shadow: inset 2px 2px 5px #9786f3;
+        }
+
+        .container .wave .dot:nth-child(5):before {
+            animation: Before 1.9s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+            animation-fill-mode: forwards;
+            animation-delay: -8.55s;
+            background-color: #42dbc0;
+            box-shadow: inset 2px 2px 5px #57dfc7;
+        }
+
+        .container .wave .dot:nth-child(5):after {
+            animation: After 1.9s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+            animation-fill-mode: forwards;
+            animation-delay: -8.55s;
+            background-color: #6f58ee;
+            box-shadow: inset 2px 2px 5px #9786f3;
+        }
+
+        .container .wave .dot:nth-child(6):before {
+            animation: Before 1.9s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+            animation-fill-mode: forwards;
+            animation-delay: -10.26s;
+            background-color: #42dbc0;
+            box-shadow: inset 2px 2px 5px #57dfc7;
+        }
+
+        .container .wave .dot:nth-child(6):after {
+            animation: After 1.9s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+            animation-fill-mode: forwards;
+            animation-delay: -10.26s;
+            background-color: #6f58ee;
+            box-shadow: inset 2px 2px 5px #9786f3;
+        }
+
+        .container .wave .dot:nth-child(7):before {
+            animation: Before 1.9s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+            animation-fill-mode: forwards;
+            animation-delay: -11.97s;
+            background-color: #42dbc0;
+            box-shadow: inset 2px 2px 5px #57dfc7;
+        }
+
+        .container .wave .dot:nth-child(7):after {
+            animation: After 1.9s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+            animation-fill-mode: forwards;
+            animation-delay: -11.97s;
+            background-color: #6f58ee;
+            box-shadow: inset 2px 2px 5px #9786f3;
+        }
+
+        .container .wave .dot:nth-child(8):before {
+            animation: Before 1.9s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+            animation-fill-mode: forwards;
+            animation-delay: -13.68s;
+            background-color: #42dbc0;
+            box-shadow: inset 2px 2px 5px #57dfc7;
+        }
+
+        .container .wave .dot:nth-child(8):after {
+            animation: After 1.9s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+            animation-fill-mode: forwards;
+            animation-delay: -13.68s;
+            background-color: #6f58ee;
+            box-shadow: inset 2px 2px 5px #9786f3;
+        }
+
+        .container .wave .dot:nth-child(9):before {
+            animation: Before 1.9s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+            animation-fill-mode: forwards;
+            animation-delay: -15.39s;
+            background-color: #42dbc0;
+            box-shadow: inset 2px 2px 5px #57dfc7;
+        }
+
+        .container .wave .dot:nth-child(9):after {
+            animation: After 1.9s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+            animation-fill-mode: forwards;
+            animation-delay: -15.39s;
+            background-color: #6f58ee;
+            box-shadow: inset 2px 2px 5px #9786f3;
+        }
+
+        .container .wave .dot:nth-child(10):before {
+            animation: Before 1.9s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+            animation-fill-mode: forwards;
+            animation-delay: -17.1s;
+            background-color: #42dbc0;
+            box-shadow: inset 2px 2px 5px #57dfc7;
+        }
+
+        .container .wave .dot:nth-child(10):after {
+            animation: After 1.9s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+            animation-fill-mode: forwards;
+            animation-delay: -17.1s;
+            background-color: #6f58ee;
+            box-shadow: inset 2px 2px 5px #9786f3;
+        }
+
+        @keyframes Before {
+            0% {
+                left: -40px;
+                z-index: 10;
+            }
+            25% {
+                transform: scale(1.4);
+                z-index: 10;
+            }
+            50% {
+                left: 40px;
+                z-index: 1;
+            }
+            75% {
+                background-color: #42c3c0;
+                box-shadow: inset 2px 2px 5px #69cfcd;
+                transform: scale(0.6);
+                z-index: 1;
+            }
+            100% {
+                left: -40px;
+                z-index: 1;
+            }
+        }
+
+        @keyframes After {
+            0% {
+                left: 40px;
+                z-index: 1;
+            }
+            25% {
+                background-color: #7434f3;
+                box-shadow: inset 2px 2px 5px #9564f6;
+                transform: scale(0.6);
+                z-index: 1;
+            }
+            50% {
+                left: -40px;
+                z-index: 10;
+            }
+            75% {
+                transform: scale(1.4);
+                z-index: 10;
+            }
+            100% {
+                left: 40px;
+                z-index: 10;
+            }
+        }
+
+        @keyframes Spin {
+            0% {
+                transform: rotateZ(0deg);
+            }
+            100% {
+                transform: rotateZ(360deg);
+            }
+        }
+
+        header {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            text-align: center;
+            font-weight: 100;
+            background: #123;
+            border-bottom: 1px solid #ccf;
+        }
+
+        header > nav {
+
+        }
+
+        header > nav > ul {
+            list-style: none;
+            overflow: hidden;
+        }
+
+        header > nav > ul > li {
+            float: left;
+            margin: 0 5px;
+        }
+
+        header > nav > ul > li > a {
+            display: inline-block;
+            padding: 5px 20px;
+            color: #0fc;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        header > nav > ul > li > a:hover {
+            color: #fff;
+            background: #345;
+        }
+
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 50px 0 20px;
+            border-top: 1px solid #3e4a52;
+            background: #123;
+            font-weight: 100;
+            position: absolute;
+            bottom: 0;
+        }
+
+        footer > h3 {
+            font-weight: 500;
+            color: #999;
+            line-height: 20px;
+        }
+
+        footer > h3 > a {
+            color: #0fc;
+            text-decoration: none;
+        }
+
     </style>
 </head>
 <body>
-<!--导航栏结构-->
-<nav class="navbar navbar-default navbar-static-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#Page1" style="padding-top:0;">
-                <img alt="Logo" src="img/666.png" style="height:50px; width:50px;">
-            </a>
-            <a class="navbar-brand">Liu QingLu</a>
-        </div>
-        <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav navbar-right" id="menu">
-                <li data-menuanchor="Page1" class="menuList"><a href="#Page1">首页</a></li>
-                <li data-menuanchor="Page2" class="menuList"><a href="#Page2">博客</a></li>
-                <li data-menuanchor="Page3" class="menuList"><a href="#Page3">关于我</a></li>
-                <li data-menuanchor="Page4" class="menuList"><a href="#Page4">联系我</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-<!--翻页显示-->
-<div id="fullpage">
-    <div class="section">
-        <video class="video1" src="images/banner-1.mp4" loop muted data-autoplay></video>
-        <div class="layer">
-            <h1>首页</h1>
-        </div>
-    </div>
-    <div class="section">
-        <video class="video1" src="images/earth.mp4" loop muted data-autoplay></video>
-        <div class="layer">
-            <h1>博客</h1>
-        </div>
-    </div>
-    <div class="section">
-        <video class="video1" src="images/flowers.mp4" loop muted data-autoplay></video>
-        <div class="layer">
-            <h1>关于我</h1>
-            <div class="content">
-
-            </div>
-        </div>
-    </div>
-    <div class="section">
-        <video class="video1" src="images/DwarfFlyingZH-CN.mp4" loop muted data-autoplay></video>
-        <div class="layer">
-            <h1>联系我</h1>
-        </div>
+<header>
+    <nav>
+        <ul>
+            <li><a href="">首页</a></li>
+            <li><a href="">博客</a></li>
+            <li><a href="">关于我</a></li>
+            <li><a href="">联系我</a></li>
+        </ul>
+    </nav>
+</header>
+<div class="container">
+    <div class="wave">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
     </div>
 </div>
+<footer>
+    <h3>
+        Copyright © 2016-2017 点滴生活
+        <a href="http://www.liuqinglu.com" target="_blank">www.liuqinglu.com</a>
+        <a href="http://www.miitbeian.gov.cn" target="_blank">粤ICP备16017938号-1</a>
+    </h3>
+</footer>
 <script src="js/jquery-3.1.1.min.js"></script>
-<script src="js/jquery.fullpage.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/b_fullpage.js"></script>
 </body>
 </html>
