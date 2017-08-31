@@ -3,7 +3,6 @@
  */
 "use strict";
 $(function () {
-    "use strict";
     $('#fullpage').fullpage({
         //Navigation
         menu: '#menu',
